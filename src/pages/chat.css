@@ -1,0 +1,13 @@
+.chat {
+    display: flex;
+    flex-direction: row;
+}
+
+.chat__left {
+    height: 90vh;
+}
+
+.chat__right {
+    margin-left: 10px;
+    height: 90vh;
+}
