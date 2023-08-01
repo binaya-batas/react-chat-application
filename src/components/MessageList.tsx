@@ -1,6 +1,10 @@
 import React from 'react'
+import { RootState } from '../app/store'
+import { useSelector } from 'react-redux'
 
 const MessageList = () => {
+  const messages = useSelector((state: RootState) => state.message.messages)
+
   return (
     <div 
     style={{ 
@@ -10,7 +14,14 @@ const MessageList = () => {
         paddingInline: '10px'    
         }}
     >
-        MessageList
+        {
+          messages.map((message) => (
+            <div>
+              <span>{message.sender} : </span>
+              <span>{message.message}</span>
+            </div>
+          ))
+        }
     </div>  
   )
 }
